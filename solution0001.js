@@ -1,7 +1,15 @@
-alert('Working')
+// DESCRIPTION:
+// Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
 
-// When doing codewars, copy and throw test cases into here
-// If you need to view the answer in Codewars, still push it to GH for the green square
+// For example,
 
-const points = [40, 100, 1, 5, 25, 10];
-console.log(points[0]);
+// [true,  true,  true,  false,
+//     true,  true,  true,  true ,
+//     true,  false, true,  false,
+//     true,  false, false, true ,
+//     true,  true,  true,  true ,
+//     false, false, true,  true]
+    
+// The correct answer would be 17.
+
+// Hint: Don't forget to check for bad values like null/undefined
