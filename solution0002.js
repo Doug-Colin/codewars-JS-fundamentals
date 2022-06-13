@@ -1,1 +1,12 @@
-// Codewars solution 00002 goes here
+/*
+Codewars solution 00002 
+
+8KYU You Can't Code Under Pressure #1
+Code as fast as you can! You need to double the integer and return it.
+
+ i will be an integer. Double it and return it.
+*/
+
+function doubleInteger(i) {
+  return i * 2;
+}
