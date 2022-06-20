@@ -1,5 +1,5 @@
 /*
-8kyu Keep Hydrated!
+8kyu - Keep Hydrated!
 
 Nathan loves cycling.
 
