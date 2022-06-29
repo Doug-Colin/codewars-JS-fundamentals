@@ -1,5 +1,4 @@
 /*
-COMMITTED
 8 kyu - Double Char
 Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
 
