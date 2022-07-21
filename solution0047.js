@@ -1,14 +1,13 @@
 /*
---------------- 8 Kyu - Invert values ------------------
+--------------- 8 Kyu - Lost Without a Map ------------------
 
 Instructions:
 
-Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+Given an array of integers, return a new array with each value doubled.
 
-invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
-invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
-invert([]) == []
-You can assume that all values are integers. Do not mutate the input array/list.
+For example:
+
+[1, 2, 3] --> [2, 4, 6]
 
 -------------
 Sample Tests
@@ -17,12 +16,11 @@ const chai = require("chai");
 const assert = chai.assert;
 chai.config.truncateThreshold=0;
 
-describe("Invert array values",() => {
-  it("Basic Tests", () => {
-    assert.deepEqual(invert([1,2,3,4,5]), [-1,-2,-3,-4,-5]);
-    assert.deepEqual(invert([1,-2,3,-4,5]), [-1,2,-3,4,-5]);
-    assert.deepEqual(invert([]), []);
-    assert.deepEqual(invert([0]), [-0]);
+describe("Basic tests", ()=>{
+  it("Fixed tests", () => {
+    assert.deepEqual(maps([1, 2, 3]), [2, 4, 6]);
+    assert.deepEqual(maps([4, 1, 1, 1, 4]), [8, 2, 2, 2, 8]); 
+    assert.deepEqual(maps([2, 2, 2, 2, 2, 2]), [4, 4, 4, 4, 4, 4]); 
   });
 });
 
@@ -30,11 +28,9 @@ describe("Invert array values",() => {
 --------------
 
 Psuedo Code:
--use .map() to multiply each array element by -1 
--array.map(x => x * -1)
-
+-.map(x => x * 2)
 */
 
-function invert(array) {
-    return array.map(x => x * -1); 
-  }
+function maps(x){
+return x.map(y => y * 2)
+}
