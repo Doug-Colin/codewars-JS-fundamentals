@@ -33,7 +33,7 @@ Psuedo Code
 
 Lessons Learned:
 -it seems You cannot simply return the (i) of a for loop
--thius you must decalre a variable, assign it an array, and loop through that)
+-thus you must decalre a variable, assign it an array, and loop through that)
 -I guess the prblem here is that for loops work with arrays, not simply two arghuments
 
 
