@@ -1,4 +1,7 @@
 /*
+
+*String Methods Series*
+
 --------------- 8 Kyu - Remove String Spaces ------------------
 
 Instructions:
@@ -36,6 +39,8 @@ Psuedo Code:
 -we, that didn't work and neither did replaceAll(' ', ''), so I guess this challenge was written before ES6
 -try .split(' ').join('')
 
+Lessons learned:
+x.replace(regex, '') was in the solutions. So perhaps 
 */
 
 function noSpace(x){
