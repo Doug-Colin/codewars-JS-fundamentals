@@ -1,5 +1,5 @@
 /*
----------------  Kyu -  ------------------
+---------------  Kyu - ------------------
 
 Instructions:
 
@@ -13,14 +13,28 @@ Sample Tests
 --------------
 PREP
 
-Parameters:
+Parameters: 
+    -
+    -  
 
-Return:
+Return: 
+    -
 
 Example:
+    -
+    -
 
 Psuedo Code:
+    -
+        -
 
+    -
+    
+        -
 
+    -
+        -
 
 */
+//refactored:
+
