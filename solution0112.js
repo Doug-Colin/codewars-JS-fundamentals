@@ -41,26 +41,35 @@ Example:
     - first we add elements 1 + 3, then + 3, equaling 6. So we return 2 as two operations were required.  
 
 Psuedo Code:
+
+    -declare variables to hold sums and accumulator
+
     -sort() array ascendinhg
         -numbers.sort((a,b) => a - b)
 
-    -use for() ll
+    -loop through array finding sums
 
-    -once accumulator >= value, return accumulator
-        - while (acc < value) {apply reduce()}
+    -push sums into array; each element index + 1 represents a sum operation
     
-    -return accumulator
+    -return how many sum operations are necessary to reach value
 */
 
 function minimumSteps(numbers, value){
-    let sums = []
-    let solution = 0
 
+    //declare array to hold sums
+    let sums = []
+
+    //declare sum to accumulate sums
+    let sum = 0
+
+    //sort array ascending
     numbers.sort((a, b) => a - b);
 
+    //loop through array, adding elements to each other, and pushing result of each operation to sums array
     for (let i = 0; i < numbers.length; i++) {
-        sums.push(solution += numbers[i]);
+        sums.push(sum += numbers[i]);
       }
 
-      return sums.filter(x => x < value).length;
+    //filter sums array for sum >= value, once reached, return # of operations via array length. 
+      return sums.filter(x => xs < value).length;
   }
