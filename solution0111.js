@@ -1,5 +1,5 @@
 /*
---------------- 7 Kyu - ------------------
+--------------- 7 Kyu - Product Array ------------------
 
 Instructions:
 
@@ -37,18 +37,22 @@ Example:
     
 
 Psuedo Code 
-        
-    -map() the param array and .push() multiply all elements via reduce
+    -create empty array to hold solution    
+
+    -map() the param array/forEach element, applying .reduce() ot the array without that element 
     
-        - numbers.map(x => numbers.pop().reduce((a, b) => a * b / x))
+    -But how to remove each element, and then add it back? 
 
+Lessons Learned
 
-    -divide product by each element
+    -removing each element, applying a function, then reinsterting the element and repeating for all elements is surprisingly difficult. 
 
-
+    -Most top solutions to this were math-based; multiply all elements, then divide  by the current iterated element, to reverse that elements product rather than actually find the array's product without the element.
+    
+    -consider whether mathematical challenges can be solved mathematically, instead of through manual manupulation of arrays.
 */
-//refactored:
+
 
 function productArray(numbers){
-    //your code here
+    return numbers.map(x => numbers.reduce((a,b) => a * b) / x)
   }
