@@ -27,31 +27,27 @@ describe("Basic tests", () => {
 PREP
 
 Parameters: 
-    -
-    -  
+    -two arrays of integers
 
 Return: 
-    -
+    -the sum of the elements of both arrays
 
 Example:
-    -
-    -
+    -none given
 
 Psuedo Code:
-    -
-        -
+    -use .concat() to combine arrays
+        arr1.concat(arr2)
 
-    -
-    
-        -
-
-    -
-        -
+    -use .reduce() to find sum of all elements
+        .reduce((a, b) => a + b)
 
 */
 
 
 function arrayPlusArray(arr1, arr2) {
-    return arr1 + arr2; //something went wrong
+    //use .concat() to combine arrays
+    //use .reduce() to find sum of all elements
+    return arr1.concat(arr2).reduce((a, b) => a + b); 
   }
 
