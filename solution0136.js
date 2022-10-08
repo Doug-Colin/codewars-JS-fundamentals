@@ -57,3 +57,4 @@ var filterString = function(value) {
     
    }
 
+//Lesson learned: this could have been done far more effienctly via .replace(regex, '')
