@@ -76,3 +76,17 @@ function order(words){
     return(solution.join(' '))
   }
 
+//------------- Lessons Learned ----------------------------
+//  The most efficient way to sort an array of strings by what characters they contain, is to write a custom compare function for .sort() using .match(regex)
+
+  function order(words){
+  
+    //split(' ') words by spaces so we can work with them as an array
+    //use .sort() with custom compare function, that compares array elements by the numbers they contain, using .match(regex)
+    
+  return words.split(' ').sort(function(a, b){
+      return a.match(/\d/) - b.match(/\d/);
+   }).join(' ');
+}   
+/*
+*/

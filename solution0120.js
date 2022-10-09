@@ -69,3 +69,4 @@ function alexMistakes(numberOfKata, timeLimit){
     }
     return mistakes
   }
+  

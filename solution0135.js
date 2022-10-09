@@ -50,9 +50,11 @@ function tea42(input) {
             // .split('') string so we can map() it as an array
             // .map() array and use ternary to return 't' if character is '2', otherwise return element as-is 
             // .join('') array of characters so it becomes a string, return 
-            
+
     return  input.toString()
                  .split('')
                  .map(function (element) {return element == '2' ? 't' : element })
                  .join('');
     };
+
+    //Lessons Learned: you could have accomplished this more concisely & efficiently via .toString() & .replace(/2/g, 't') 

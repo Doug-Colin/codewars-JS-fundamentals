@@ -55,15 +55,15 @@ function rot13(message){
     //split('') string into array of individual characters so we can .map() it
     return message.split('').map(function(element, index) {
       
-    /*  Use .match(regex) to find if the element is a-m, lower or uppercase.
-        Then return the character that is 13 letters after it by:
+    /*  Use .match(regex) to find if element is a-m || A-M, & return the character 13 letters after it by:
             - finding it's Unicode equivalent via .charCodeAt() and adding 13.
             - then finding what character that is via String.fromCharCode.
         
-        Adding 13 to the unicode won't work for characters n-z because the unicode character 13 places after them is non-alphabetical.
-            -we can solve this problem by instead subtracting 13, essentially looping around the charCode of the alphabet.
-
+        Note that adding 13 to the unicode won't work for characters n-z, since the unicode character
+        13 places after them is non-alphabetical.
+            -we can solve this problem by instead subtracting 13, looping around the alphabet charCode
     */
+
     if (element.match(/[a-m]|[A-M]/)) {
           return String.fromCharCode(message.charCodeAt(index) + 13)
          } else if (element.match(/[n-z]|[N-Z]/)) {
@@ -77,4 +77,9 @@ function rot13(message){
     }
 
 
-//Non-Commented
+//------------------------- Lessons Learned / Best Practices -------------------------- 
+
+//Second best practices solution used .replace(), which I need to make more of a habit of.
+//I'm not sure it's more legible than my solution, but it's good to know that .replace(character, with) works with ternary statements.
+
+const rot13 = str => str.replace(/[a-z]/gi, letter => String.fromCharCode(letter.charCodeAt(0) + (letter.toLowerCase() <= 'm' ? 13: -13)));
