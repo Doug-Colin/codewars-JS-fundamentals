@@ -78,4 +78,9 @@ function alphabetPosition(text) {
   }
 
 
-  
+  //Above solution still does not work, after issue was supposedly fixed. So there may truly be an issue with the solution.... something with regex and then .map carrrying over null values. 
+  "*?(]@?( "
+
+  "=5!?4!>&"
+
+
