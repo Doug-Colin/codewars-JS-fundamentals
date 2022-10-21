@@ -48,8 +48,6 @@ Psuedo Code:
 
     -return [second highest, higest]
 
-
-
 */
 
 
