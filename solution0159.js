@@ -1,5 +1,5 @@
 /*
----------------  Kyu -  ------------------
+--------------- 6 Kyu - The Supermarket Queue ------------------
 
 Instructions:
 
@@ -22,7 +22,15 @@ P.S. The situation in this kata can be likened to the more-computer-science-rela
 -------------
 Sample Tests
 
+describe("example tests", function() {
+Test.assertEquals(queueTime([], 1), 0);
+Test.assertEquals(queueTime([1,2,3,4], 1), 10);
+Test.assertEquals(queueTime([2,2,3,3,4,4], 2), 9);
+Test.assertEquals(queueTime([1,2,3,4,5], 100), 5);
 
+//add some more example tests here, if you like
+
+})
 
 --------------
 PREP
@@ -52,30 +60,32 @@ Examples:
 Psuedo Code:
     -I tried variations of this in my RunJS environment, to no avail, so am breaking down the top solution here.
 
-    -
+    -create array to represent num of tills via Array(n), and assign all tills 0 via .fill(0)
 
-    -
+    -iterate through customers/times array via forEach(), adding each customer/time to the time taken at each till. 
 
+    -in order to represent the next available till, we'll need to find the index of the value in the tills arary that is lowest, via .indexOf(Math.min(...tills)). save as variable nextTill
 
+    -On each iteration, add the next customer/time to the next available till (till with lowest customer/time value), via addition-assignment operator 
+
+    -after customers.forEach((customer)... completes, return the time needed at the tills by finding the highest summed value via Math.max(...tills)  
 */
 
 
 function queueTime(customers, n) {
-    //declare variable tills and assign it Array(n), which creates an empty Array with (n) elements. 
-    //use .fill(0), to populate each element with the value 0
+    //create Array to reprent the tills by passing (n) Array(), and fill each index with 0 via .fill()
     let tills = Array(n).fill(0);
     
-    //forEach() customer in the given customers array...
-    //declare variable nextTill and assign it the till.indexOf(Math.min...tills)
-    //for each customer/timecost, tills[nextTill] will add the customer/timecost
-    //I'm guessing that by using Math.min we are finding the next available till, but I don't clearly understand the syntax.
-    //I'm guessing that returning Math.max(...tills) returns the maximum time that it would take tills to iterate through the customers in order. 
-    //But I don't understand how this syntax is accomplishing that. 
+    //iterate through customer/time array via forEach(), populating the tills array with each customer/time.
     customers.forEach((customer) => {
+      
+      //create variable representing the index of the next available slot in the tills array by finding .indexOf() lowest total customer/time
       let nextTill = tills.indexOf(Math.min(...tills))
+
+      //On each iteration, add the current customer/time val to the next available till via addition-assignment operator
       tills[nextTill] += customer;
     });
   
+    //return the highest accumulated customer/time total in the tills array via Math.max(...tills)
     return Math.max(...tills);
   }
-
