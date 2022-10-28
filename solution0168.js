@@ -9,17 +9,25 @@ Complete the function that returns an array of length n, starting with the given
 -------------
 Sample Tests
 
+const { assert } = require('chai');
 
+describe("Sample tests", () => {
+  it("Examples", () => {
+    assert.sameOrderedMembers(squares(2,5),[2,4,16,256,65536]);   
+    assert.sameOrderedMembers(squares(3,3),[3,9,81]);  
+    assert.sameOrderedMembers(squares(5,3),[5,25,625]);  
+    assert.sameOrderedMembers(squares(10,4),[10,100,10000,100000000]);  
+  });
 
 --------------
 PREP
 
 Parameters: 
-    -
-    -  
+    -n, representing the length of array
+    -x, representing the first value in the array  
 
 Return: 
-    -
+    -the array with each element after the first being the square of the previous element
 
 Example:
 
