@@ -63,10 +63,6 @@ Psuedo Code:
 
 
 */
-//refactored:
-
-//----- Best Practices / Lessons Learned ---------------
-
 
 function digPow(n, p){
   
@@ -92,3 +88,8 @@ function digPow(n, p){
   } 
     return k
   }
+
+  //----- Best Practices / Lessons Learned ---------------
+
+  //Clean solution!!
+
