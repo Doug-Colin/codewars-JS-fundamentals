@@ -51,35 +51,31 @@ Psuedo Code:
 
 */
 
+function longestConsec(strarr, k) {
+  
+    let n = strarr.length
 
-
-//refactored:
-
-//----- Best Practices / Lessons Learned ---------------
-
-let concats = []
-console.log(concats.length)
-
-for (let i = 0; i < k; i++ ) {
-  concats.push(strarr.slice(i, i + k))
-}
-
-// console.log(concats)
-let combos = concats.map(x => x.join(''))
-
-// console.log(combos)
-// "------------"
-combos.sort((a, b) => b.length - a.length)[0]
-
-
-
-//1) Still need to find a relationship for how many times to iterate slice method. 
-/*
-length == 6, k == 2 -> 5 times   ....length - (k-1) FUCKIN BINGO. Got plans, will 
-length == 5, k == 1 -> 5 times
-length == 3, k == 2 -> 2 times
-length == 5, k == 3 -> 3 times
-length == 6, k == 2 -> 5 times
-
- 2) still need to return longest concatenation *without* .sort().
-*/
+    //return an empty string for the necessary cases as defined.    
+    if (n == 0 || k > n || k <= 0) {
+        return ""
+      } else {
+    //Otherwise
+    
+    //declare variable and assign empty array to hold the string combinations 
+    let permutations = []
+    
+    //iterate from 0 through the necessary amount of permutations to find all combinations of k elements
+    //on each iteration, use .slice() to cut k number of strings from array, and .join() them into one string
+    //.push() each permutation of joined strings into the array
+    for (let i = 0; i <= (n - k); i++ ) {
+      permutations.push(strarr.slice(i, i + k).join(''))
+    }
+    
+    //Use .reduce() to return the longest string combination in our permutations array, and .length to find its length 
+    let longestLength = permutations.reduce((a, b) => a.length > b.length ? a : b).length
+    
+    //filter the permutations array for elements with a length equal to that of the longest element
+    //return the first element of the filtered array as that will be the first longest element 
+    return permutations.filter((x) => x.length == longestLength)[0]
+      }
+    }
