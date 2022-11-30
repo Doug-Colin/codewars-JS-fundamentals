@@ -46,7 +46,7 @@ Psuedo Code:
 */
 
 function reverseLetter(str) {
-    str.split(' ').map((x) =>{
+    str.split('').map((x) =>{
         if (/[a-z]/gi.test(x)) {
           return x
         } 
