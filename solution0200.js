@@ -40,15 +40,18 @@ Example:
 Psuedo Code:
     -.split() the string
     -.map() it
-    -declare variable and assign regex for alphabetical characters
     - if (element.test(regex)) return element
     -.join('') and return
 */
 
 function reverseLetter(str) {
-    str.split('').map((x) =>{
+
+    //.split() the string into an array of letters & .map() it
+    //use regex.test(element) to return true if element/letter is between a-z, case insensitive
+    //.reverse() and .join('') string, return it.
+    return str.split('').map((x) =>{
         if (/[a-z]/gi.test(x)) {
           return x
         } 
-      }).join('')
-  }
+      }).reverse().join('')
+      }
