@@ -52,4 +52,4 @@ function args_count() {
     return arguments.length;
   }
 
-  //arguments is an array-like object
+  //arguments is an array-like object accessible inside functions, that contains the values of the arguments passed to that function.
