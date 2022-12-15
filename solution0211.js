@@ -49,18 +49,41 @@ Psuedo Code:
 
     -if .length < 1, break, return null
 */
+//-------------------- Solution- version with comments below -------------------------------------
 
 const prevMultOfThree = n => {
-    n = n.toString().split('')
-    
-    for (let i = n.length; i >= 1; i--) {
-    console.log(i)
-    
+
+  n = n.toString().split('')
+  for (let i = n.length; i >= 0; i--) {
     if (n.join('') % 3 !== 0) {
       n.pop()
-    }
-      
+    }    
   }
-    console.log(n)
-    return Number(n.join('')) % 3 == 0 ? n : null;
+
+  n = Number(n.join(''));
+
+  return n == 0 ? null : n;
+
+}
+
+//-------------------- Solution with comments -------------------------------------
+
+const prevMultOfThree = n => {
+  //convert n into a string and split it into an array of digits as strings
+  n = n.toString().split('')
+  
+  //use for loop to decrement through the array of n's digits
+  //on each iteration, check if (n % 3 !== 0). if so, remove last digit of n, and repeat 
+  for (let i = n.length; i >= 0; i--) {
+    if (n.join('') % 3 !== 0) {
+      n.pop()
+    }    
   }
+  
+  //.join() n back together and convert to Number
+  n = Number(n.join(''));
+  
+  //if n now == 0, return null. otherwise, return n
+  return n == 0 ? null : n;
+
+}
