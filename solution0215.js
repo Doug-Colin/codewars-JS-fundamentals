@@ -40,14 +40,19 @@ Psuedo Code:
 
 
 */
-//-------------------- Solution- version with comments below -------------------------------------
-152/36
-//**gotta subtract the inner cubes. tricky fucker
-//36 + 36,( cuts+1) -2 = 4 permiter layers. (4 permiter layers * outer ring = sections * 2 + sections  + section -2 * 2)
-36 + 36 
-(6-2) * ()
-
-//-------------------------- Solution With Comments ------------------------------------
+//-------------------- Solution -------------------------------------
+var countSquares = function(cuts){
+    if (cuts == 0) {
+    return 1
+    } else {
+    const sections = cuts + 1;
+    const totalCubes = (sections ** 2) * sections;
+    const fullyBlueCubes = (sections - 2) ** 3;
+    return totalCubes - fullyBlueCubes;
+    }
+  }
 
 
 //----- Best Practices / Lessons Learned ---------------
+//more math is less code
+let countSquares = c => c ? 6 * c * c + 2 : 1;
