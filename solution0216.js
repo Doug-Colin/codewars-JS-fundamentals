@@ -45,18 +45,11 @@ Example:
 "ACSKLDFJSGSKLDFJSKLDFJ" -> True
 
 Psuedo Code:
-    -
-
-    -
-
-    -
-
+-check for value in array via .includes(), return true if included, otherwise false
 
 */
-//-------------------- Solution- version with comments below -------------------------------------
+//-------------------- Solution -------------------------------------
 
-
-//-------------------------- Solution With Comments ------------------------------------
-
-
-//----- Best Practices / Lessons Learned ---------------
+function check(a, x) {
+    return a.includes(x) ? true : false;
+    }
