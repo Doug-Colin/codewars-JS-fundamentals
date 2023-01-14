@@ -81,27 +81,25 @@ function addLength(str) {
   }
 
 //----- Best Practices / Lessons Learned ---------------
-=======
-    -n, a non-negative integer
+
+//     -n, a non-negative integer
   
 
-Return: 
-    -Evaluate and return 2**0 through 2**n
+// Return: 
+//     -Evaluate and return 2**0 through 2**n
 
-Example:
-  n = 0  ==> [1]        # [2^0]
-  n = 1  ==> [1, 2]     # [2^0, 2^1]
-  n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
+// Example:
+//   n = 0  ==> [1]        # [2^0]
+//   n = 1  ==> [1, 2]     # [2^0, 2^1]
+//   n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
 
-Psuedo Code:
-    - use for loop to iterate from numbers 0 through n
+// Psuedo Code:
+//     - use for loop to iterate from numbers 0 through n
 
-    - on each iteration, evaluate 2**i, and .push() into an array
+//     - on each iteration, evaluate 2**i, and .push() into an array
 
-    - return arrayt
+//     - return arrayt
 
-
-*/
 
 //--------------- Solution ------------------------
 
@@ -117,4 +115,3 @@ for (let i = 0; i <= n; i++) {
 }
   return powers;
 }
->>>>>>> c0fa1d2fe6b11483d089f14bc92a18722ae47d0d
