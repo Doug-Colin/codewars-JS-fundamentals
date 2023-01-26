@@ -95,31 +95,51 @@ Psuedo Code:
 //-------------------- Solution- version with comments below -------------------------------------
 
 //----------****** work in progress *****-----------------
-let sqr1=9
-let sqr2=5
 
-let difference = sqr1 **2 - sqr2**2
-let series = sqr1-sqr2
-let odds = []
-for (let i = sqr2 **2; i <= sqr1**2; i++) {
- 
-    if (!(i%2===0)) {
-      odds.push(i)
+function squaresToOdd(sqr1, sqr2){
+   
+    let difference = sqr1 **2 - sqr2**2
+    let seriesLength = sqr1-sqr2
+    let odds = []
+
+    for (let i = 1; i<=200; i+=2) {
+    odds.push(i)
     }
-}
-let solution = []
-console.log(odds)
-//odds.splice(0, 4)
-for (let i = 1; i<=21; i+=series*2) {
-  console.log
-}
-// for (let i = 0; i<=odds.length-series; i+=2) {
-//   solution.push(odds.slice(i, i+series))
-// }
-// console.log(solution)
+    
+    for (let i = 0; i <= odds.length; i++) {
+      if (odds.slice(i, i+seriesLength).reduce((a,b)=>a+b) == difference) {
+        return `${sqr1}^2 - ${sqr2}^2 = ${odds.slice(i, i+seriesLength).join(' + ')} = ${difference}`
+      }
+    } 
+  }
 
 
 //-------------------------- Solution With Comments ------------------------------------
-
+function squaresToOdd(sqr1, sqr2){
+   
+    //square each input via exponent operator (**) and find difference
+    let difference = sqr1 **2 - sqr2**2
+    
+    //find length of sum sequence
+    let seriesLength = sqr1-sqr2
+    
+    //declare empty array to hold sequence of odd numbers
+    let odds = []
+    
+    //use for loop to iterate through odd nums between 1 and 200, pushing them into our odds array (200 is max input)
+    for (let i = 1; i<=200; i+=2) {
+    odds.push(i)
+    }
+    
+     //use for loop to iterate through odds array
+     //use .slice() to return sequences of the array without modifying it, of length seriesLength
+     //use .reduce() to find out if the sum of each sequence equals the difference between our squared inputs
+     //if it does, use template literal to return correct string 
+    for (let i = 0; i <= odds.length; i++) {
+      if (odds.slice(i, i+seriesLength).reduce((a,b)=>a+b) == difference) {
+        return `${sqr1}^2 - ${sqr2}^2 = ${odds.slice(i, i+seriesLength).join(' + ')} = ${difference}`
+      }
+    } 
+  }
 
 //----- Best Practices / Lessons Learned ---------------
