@@ -34,7 +34,7 @@ Psuedo Code:
 //-------------------- Solution (without comments) -------------------------------------
 
 function reverse(string){
-    
+
     return string.trim()
           .split(' ')
           .reverse()
@@ -54,4 +54,4 @@ function reverse(string){
           .join(' ')
   }
 
-//--------------- Best Practices / Lessons Learned -------------------------------------
+//--------------- Best Practices / Lessons Learned ------------------------------------
