@@ -1,3 +1,3 @@
 # codewars-JS-fundamentals
 
-A collection of hundreds of codewars challenges for staying sharp on objects and methods fundamental to solving problems in JS.
+My collection of the hundreds of codewars challenges I used to stay sharp on the objects and methods fundamental to JS.
